@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI岗位招聘数据分析可视化看板</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2.0.0/dist/echarts-wordcloud.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤖 AI岗位招聘数据分析可视化看板</h1>
+            <p class="subtitle">基于智联招聘和BOSS直聘的真实招聘数据</p>
+        </header>
+
+        <div class="overview-cards">
+            <div class="card">
+                <div class="card-value" id="totalJobs">0</div>
+                <div class="card-label">总岗位数</div>
+            </div>
+            <div class="card">
+                <div class="card-value" id="avgSalary">0K</div>
+                <div class="card-label">平均月薪</div>
+            </div>
+            <div class="card">
+                <div class="card-value" id="cityCount">0</div>
+                <div class="card-label">覆盖城市</div>
+            </div>
+            <div class="card">
+                <div class="card-value" id="topSkill">-</div>
+                <div class="card-label">最热技能</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label>岗位类型：</label>
+                <select id="typeFilter">
+                    <option value="all">全部岗位</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>城市：</label>
+                <select id="cityFilter">
+                    <option value="all">全部城市</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>经验：</label>
+                <select id="expFilter">
+                    <option value="all">全部经验</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>学历：</label>
+                <select id="eduFilter">
+                    <option value="all">全部学历</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>公司规模：</label>
+                <select id="sizeFilter">
+                    <option value="all">全部规模</option>
+                </select>
+            </div>
+            <button class="reset-btn" onclick="resetFilters()">重置筛选</button>
+        </div>
+
+        <div id="jobTypeDetails" class="job-details-container">
+            <p style="text-align:center;color:#666;">请从上方岗位类型筛选器选择一个岗位查看详情</p>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card" id="chart1">
+                <h3>📊 薪资分布直方图</h3>
+                <div class="chart" id="salaryChart"></div>
+            </div>
+            <div class="chart-card" id="chart2">
+                <h3>📈 经验要求分布</h3>
+                <div class="chart" id="expChart"></div>
+            </div>
+            <div class="chart-card" id="chart3">
+                <h3>🎓 学历要求饼图</h3>
+                <div class="chart" id="eduChart"></div>
+            </div>
+            <div class="chart-card" id="chart4">
+                <h3>🏢 公司规模分布</h3>
+                <div class="chart" id="sizeChart"></div>
+            </div>
+            <div class="chart-card" id="chart5">
+                <h3>🏭 行业分布</h3>
+                <div class="chart" id="industryChart"></div>
+            </div>
+            <div class="chart-card" id="chart6">
+                <h3>⭐ 核心技能词云</h3>
+                <div class="chart" id="coreSkillChart"></div>
+            </div>
+            <div class="chart-card" id="chart7">
+                <h3>✨ 加分技能词云</h3>
+                <div class="chart" id="plusSkillChart"></div>
+            </div>
+            <div class="chart-card" id="chart8">
+                <h3>📉 岗位类型分布</h3>
+                <div class="chart" id="typeChart"></div>
+            </div>
+            <div class="chart-card" id="chart9">
+                <h3>💼 岗位薪资对比</h3>
+                <div class="chart" id="jobSalaryChart"></div>
+            </div>
+            <div class="chart-card" id="chart10">
+                <h3>🎓 学历薪资对比</h3>
+                <div class="chart" id="eduSalaryChart"></div>
+            </div>
+            <div class="chart-card" id="chart11">
+                <h3>🔥 薪资技能关系图</h3>
+                <div class="chart" id="salarySkillChart"></div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>数据来源：智联招聘、BOSS直聘 | 生成时间：2026年5月</p>
+        </footer>
+    </div>
+
+    <script src="js/data-loader.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/charts-config.js"></script>
+    <script src="js/filters-handler.js"></script>
+    <script>
+        async function initApp() {
+            await loadData();
+            initFilters();
+            initAllCharts();
+            updateAllCharts();
+            updateJobTypeDetails();
+        }
+
+        initApp();
+    </script>
+</body>
+</html>

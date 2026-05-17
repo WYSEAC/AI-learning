@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Python",
+    "value": 1284
+  },
+  {
+    "name": "RAG",
+    "value": 1201
+  },
+  {
+    "name": "LLM",
+    "value": 872
+  },
+  {
+    "name": "Prompt",
+    "value": 736
+  },
+  {
+    "name": "API",
+    "value": 734
+  },
+  {
+    "name": "Java",
+    "value": 707
+  },
+  {
+    "name": "LangChain",
+    "value": 687
+  },
+  {
+    "name": "PyTorch",
+    "value": 295
+  },
+  {
+    "name": "Dify",
+    "value": 285
+  },
+  {
+    "name": "LangGraph",
+    "value": 230
+  },
+  {
+    "name": "Spring",
+    "value": 223
+  },
+  {
+    "name": "FastAPI",
+    "value": 210
+  },
+  {
+    "name": "TensorFlow",
+    "value": 204
+  },
+  {
+    "name": "Function Calling",
+    "value": 196
+  },
+  {
+    "name": "NLP",
+    "value": 173
+  },
+  {
+    "name": "OpenAI",
+    "value": 140
+  },
+  {
+    "name": "Coze",
+    "value": 133
+  },
+  {
+    "name": "Flask",
+    "value": 128
+  },
+  {
+    "name": "CV",
+    "value": 125
+  },
+  {
+    "name": "Embedding",
+    "value": 103
+  },
+  {
+    "name": "Agents",
+    "value": 75
+  },
+  {
+    "name": "Multi-Agent",
+    "value": 74
+  },
+  {
+    "name": "Tool Use",
+    "value": 64
+  },
+  {
+    "name": "Vector",
+    "value": 52
+  },
+  {
+    "name": "Database",
+    "value": 32
+  },
+  {
+    "name": "Machine Learning",
+    "value": 29
+  },
+  {
+    "name": "Transformers",
+    "value": 29
+  },
+  {
+    "name": "HuggingFace",
+    "value": 21
+  },
+  {
+    "name": "Deep Learning",
+    "value": 15
+  },
+  {
+    "name": "Computer Vision",
+    "value": 2
+  }
+]

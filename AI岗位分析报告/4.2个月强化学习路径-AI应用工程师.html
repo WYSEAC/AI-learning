@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2个月强化学习路径 · AI应用工程师</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f0f2f5;
+            --bg2: #e4e7ec;
+            --card: rgba(255,255,255,0.92);
+            --card-h: rgba(255,255,255,1);
+            --gold: #b8860b;
+            --gold-dim: rgba(184,134,11,0.08);
+            --gold-border: rgba(184,134,11,0.2);
+            --blue: #2563eb;
+            --cyan: #0891b2;
+            --emerald: #059669;
+            --rose: #dc2626;
+            --amber: #d97706;
+            --violet: #7c3aed;
+            --orange: #ea580c;
+            --pink: #db2777;
+            --txt: #1e293b;
+            --txt2: #475569;
+            --txt3: #94a3b8;
+            --border: rgba(148,163,184,0.25);
+            --r: 14px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;-webkit-font-smoothing:antialiased}
+        body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 40% at 15% 5%,rgba(37,99,235,0.04) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 85% 90%,rgba(184,134,11,0.03) 0%,transparent 60%);pointer-events:none;z-index:0}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,0.06)}
+        .nav-in{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px}
+        .nav-brand{font-family:'Noto Serif SC',serif;font-weight:700;font-size:16px;color:var(--gold);letter-spacing:2px}
+        .nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+        .nav-links a{color:var(--txt2);text-decoration:none;font-size:12px;font-weight:500;padding:5px 11px;border-radius:5px;transition:.2s;white-space:nowrap}
+        .nav-links a:hover,.nav-links a.active{color:var(--gold);background:var(--gold-dim)}
+
+        /* HERO */
+        .hero{position:relative;padding:130px 28px 70px;text-align:center;overflow:hidden}
+        .hero::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+        .hero-badge{display:inline-block;padding:5px 18px;border:1px solid var(--gold-border);border-radius:50px;font-size:12px;color:var(--gold);letter-spacing:3px;margin-bottom:28px}
+        .hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(32px,4.5vw,50px);font-weight:900;line-height:1.35;margin-bottom:16px}
+        .hero h1 .hl{background:linear-gradient(135deg,var(--gold),#92400e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-sub{font-size:16px;color:var(--txt2);max-width:640px;margin:0 auto 36px}
+        .hero-cards{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+        .hc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 28px;text-align:center;min-width:140px;backdrop-filter:blur(8px)}
+        .hc .n{font-family:'Noto Serif SC',serif;font-size:30px;font-weight:900}
+        .hc .n.g{color:var(--gold)}.hc .n.b{color:var(--blue)}.hc .n.c{color:var(--cyan)}.hc .n.e{color:var(--emerald)}
+        .hc .l{font-size:12px;color:var(--txt3);margin-top:4px}
+
+        /* CONTAINER */
+        .ct{max-width:1100px;margin:0 auto;padding:0 28px 80px;position:relative;z-index:1}
+
+        /* SECTION */
+        .sec{margin-bottom:64px}
+        .sec-h{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+        .sec-n{font-family:'Noto Serif SC',serif;font-size:36px;font-weight:900;color:var(--gold);opacity:.25;line-height:1}
+        .sec-t{font-family:'Noto Serif SC',serif;font-size:24px;font-weight:700}
+        .sec-d{font-size:13px;color:var(--txt3);margin-top:2px}
+
+        /* SUB */
+        .sub{margin-bottom:40px}
+        .sub-t{font-family:'Noto Serif SC',serif;font-size:18px;font-weight:700;margin-bottom:16px;padding-left:14px;border-left:3px solid var(--gold)}
+
+        /* CARD */
+        .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-bottom:16px;backdrop-filter:blur(8px);transition:.3s}
+        .card:hover{background:var(--card-h);border-color:var(--gold-border);transform:translateY(-1px)}
+        .card-t{font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+        .card-t .ic{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+
+        /* BULLET */
+        .bl{list-style:none;padding:0}
+        .bl li{position:relative;padding:6px 0 6px 22px;color:var(--txt2);font-size:14px}
+        .bl li::before{content:'';position:absolute;left:0;top:14px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+        .bl li strong{color:var(--txt);font-weight:600}
+
+        /* TAG */
+        .tag{display:inline-block;padding:2px 9px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.3px}
+        .t-gold{background:rgba(232,184,75,.12);color:var(--gold)}
+        .t-blue{background:rgba(91,141,239,.12);color:var(--blue)}
+        .t-cyan{background:rgba(62,207,207,.12);color:var(--cyan)}
+        .t-emerald{background:rgba(52,211,153,.12);color:var(--emerald)}
+        .t-rose{background:rgba(248,113,113,.12);color:var(--rose)}
+        .t-amber{background:rgba(251,191,36,.12);color:var(--amber)}
+        .t-violet{background:rgba(167,139,250,.12);color:var(--violet)}
+        .t-orange{background:rgba(251,146,60,.12);color:var(--orange)}
+        .t-pink{background:rgba(244,114,182,.12);color:var(--pink)}
+
+        /* TABLE */
+        .dt{width:100%;border-collapse:separate;border-spacing:0;margin:12px 0;border-radius:10px;overflow:hidden;border:1px solid var(--border);font-size:13px}
+        .dt thead th{background:rgba(184,134,11,0.08);color:var(--gold);font-weight:600;padding:12px 14px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap}
+        .dt tbody td{padding:10px 14px;color:var(--txt2);border-bottom:1px solid var(--border);vertical-align:top}
+        .dt tbody tr:last-child td{border-bottom:none}
+        .dt tbody tr:hover{background:rgba(184,134,11,0.04)}
+        .dt .hn{color:var(--gold);font-weight:700;font-family:'Noto Serif SC',serif}
+        .dt .day-cell{white-space:nowrap;font-weight:600;color:var(--txt)}
+        .dt .day-cell .dd{font-size:11px;color:var(--txt3);font-weight:400}
+        .dt .rest-row{background:rgba(5,150,105,0.06)}
+        .rest-row td{color:var(--emerald);font-style:italic}
+
+        /* WEEK HEADER */
+        .wk-hdr{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding:16px 20px;background:linear-gradient(135deg,rgba(184,134,11,0.06),rgba(37,99,235,0.04));border:1px solid var(--gold-border);border-radius:var(--r)}
+        .wk-num{font-family:'Noto Serif SC',serif;font-size:28px;font-weight:900;color:var(--gold);line-height:1}
+        .wk-info h3{font-size:17px;font-weight:700}
+        .wk-info p{font-size:13px;color:var(--txt3)}
+
+        /* PHASE GRID */
+        .phase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+        .phase{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px;position:relative;overflow:hidden}
+        .phase::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+        .p1::before{background:linear-gradient(90deg,var(--emerald),var(--cyan))}
+        .p2::before{background:linear-gradient(90deg,var(--blue),var(--violet))}
+        .p3::before{background:linear-gradient(90deg,var(--amber),var(--rose))}
+        .p4::before{background:linear-gradient(90deg,var(--orange),var(--pink))}
+        .phase .pl{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+        .p1 .pl{color:var(--emerald)}.p2 .pl{color:var(--blue)}.p3 .pl{color:var(--amber)}.p4 .pl{color:var(--orange)}
+        .phase h4{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:700;margin-bottom:10px}
+        .phase ol{padding-left:18px;color:var(--txt2);font-size:13px}
+        .phase ol li{padding:3px 0}
+
+        /* INSIGHT */
+        .ins{background:rgba(184,134,11,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;margin:20px 0}
+        .ins p{color:var(--txt2);font-size:14px}
+        .ins strong{color:var(--gold)}
+
+        /* CODE BLOCK */
+        .code-blk{background:#1e293b;border:1px solid rgba(148,163,184,0.2);border-radius:10px;padding:18px 22px;margin:16px 0;font-family:'Courier New',monospace;font-size:13px;color:#7dd3fc;line-height:1.7;overflow-x:auto;white-space:pre}
+
+        /* CHECKLIST */
+        .chk{list-style:none;padding:0}
+        .chk li{position:relative;padding:6px 0 6px 28px;color:var(--txt2);font-size:14px}
+        .chk li::before{content:'☐';position:absolute;left:0;top:6px;font-size:16px;color:var(--txt3)}
+
+        /* RISK GRID */
+        .risk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+        .risk{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+        .risk h4{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--rose)}
+        .risk .rl{list-style:none;padding:0;margin-bottom:14px}
+        .risk .rl li{padding:3px 0 3px 18px;position:relative;color:var(--txt2);font-size:13px}
+        .risk .rl li::before{content:'⚠';position:absolute;left:0;font-size:11px}
+        .risk .st{font-size:13px;font-weight:600;color:var(--emerald);margin-bottom:6px}
+        .risk .sl{list-style:none;padding:0}
+        .risk .sl li{padding:3px 0 3px 18px;position:relative;color:var(--txt2);font-size:13px}
+        .risk .sl li::before{content:'✓';position:absolute;left:0;color:var(--emerald);font-size:11px}
+
+        /* CONCLUSION */
+        .concl{background:linear-gradient(135deg,rgba(184,134,11,0.06),rgba(37,99,235,0.04));border:1px solid var(--gold-border);border-radius:var(--r);padding:28px;margin-top:20px}
+        .concl h3{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:700;margin-bottom:16px;color:var(--gold)}
+
+        /* NUM LIST */
+        .nl{list-style:none;padding:0;counter-reset:nl}
+        .nl li{counter-increment:nl;position:relative;padding:8px 0 8px 36px;color:var(--txt2);font-size:14px}
+        .nl li::before{content:counter(nl);position:absolute;left:0;top:8px;width:24px;height:24px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+        .nl li strong{color:var(--txt)}
+
+        /* TIMELINE */
+        .tl{position:relative;padding-left:30px}
+        .tl::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),var(--blue),var(--emerald))}
+        .tl-i{position:relative;margin-bottom:24px}
+        .tl-i::before{content:'';position:absolute;left:-25px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
+        .tl-i h4{font-size:15px;font-weight:700;margin-bottom:6px}
+        .tl-i p{color:var(--txt2);font-size:13px}
+
+        /* FOOTER */
+        .ft{text-align:center;padding:36px 28px;border-top:1px solid var(--border);color:var(--txt3);font-size:12px;background:rgba(255,255,255,0.5)}
+
+        /* BACK TOP */
+        .btt{position:fixed;bottom:28px;right:28px;width:42px;height:42px;border-radius:50%;background:var(--gold);color:#fff;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:.3s;z-index:99;box-shadow:0 4px 14px rgba(184,134,11,.3)}
+        .btt.vis{opacity:1;transform:translateY(0)}
+        .btt:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(232,184,75,.4)}
+
+        /* RESOURCE GRID */
+        .res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+        .res{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px}
+        .res h4{font-size:14px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+        .res p{color:var(--txt2);font-size:13px}
+        .res a{color:var(--blue);text-decoration:none;font-size:12px;word-break:break-all}
+        .res a:hover{text-decoration:underline}
+
+        /* OUTPUT GRID */
+        .out-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+        .out{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+        .out .oi{font-size:28px;margin-bottom:8px}
+        .out h5{font-size:13px;font-weight:700;margin-bottom:4px}
+        .out p{font-size:11px;color:var(--txt3)}
+
+        /* BUDGET BAR */
+        .budget-bar{display:flex;height:28px;border-radius:6px;overflow:hidden;margin:8px 0 16px}
+        .budget-bar div{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#fff;transition:.3s}
+
+        @keyframes fi{from{opacity:0}to{opacity:1}}
+        @media(max-width:768px){
+            .nav-links{display:none}
+            .hero{padding:110px 16px 50px}
+            .ct{padding:0 16px 50px}
+            .phase-grid,.risk-grid,.res-grid,.out-grid,.hero-cards{grid-template-columns:1fr}
+            .dt{font-size:11px}
+            .dt thead th,.dt tbody td{padding:8px 10px}
+        }
+        ::-webkit-scrollbar{width:7px}
+        ::-webkit-scrollbar-track{background:var(--bg)}
+        ::-webkit-scrollbar-thumb{background:rgba(184,134,11,.3);border-radius:4px}
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-in">
+        <div class="nav-brand">AI 学习路径</div>
+        <ul class="nav-links">
+            <li><a href="#overview">总览</a></li>
+            <li><a href="#w1">第1周</a></li>
+            <li><a href="#w2">第2周</a></li>
+            <li><a href="#w3">第3周</a></li>
+            <li><a href="#w4">第4周</a></li>
+            <li><a href="#w5">第5周</a></li>
+            <li><a href="#w6">第6周</a></li>
+            <li><a href="#w7">第7周</a></li>
+            <li><a href="#w8">第8周</a></li>
+            <li><a href="#resource">资源</a></li>
+            <li><a href="#budget">预算</a></li>
+            <li><a href="#risk">风险</a></li>
+            <li><a href="#action">行动</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-badge">2026.05.18 — 2026.07.12</div>
+    <h1>2个月强化学习路径<br><span class="hl">AI应用工程师</span></h1>
+    <p class="hero-sub">高强度 · 项目驱动 · 336小时 · 从零到求职</p>
+    <div class="hero-cards">
+        <div class="hc"><div class="n g">336h</div><div class="l">总学习时长</div></div>
+        <div class="hc"><div class="n b">8周</div><div class="l">周期</div></div>
+        <div class="hc"><div class="n c">5个</div><div class="l">实战项目</div></div>
+        <div class="hc"><div class="n e">¥700</div><div class="l">预算(元)</div></div>
+    </div>
+</section>
+
+<div class="ct">
+
+<!-- OVERVIEW -->
+<section class="sec" id="overview">
+    <div class="sec-h"><div class="sec-n">00</div><div><div class="sec-t">学习配置总览</div><div class="sec-d">你的选择确认</div></div></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:28px;">
+        <div class="card" style="margin-bottom:0;text-align:center"><div style="font-size:13px;color:var(--txt3);margin-bottom:6px">每日学习</div><div style="font-size:22px;font-weight:900;color:var(--gold)">7小时</div><div style="font-size:11px;color:var(--txt3)">上午2h + 下午3h + 晚上2h</div></div>
+        <div class="card" style="margin-bottom:0;text-align:center"><div style="font-size:13px;color:var(--txt3);margin-bottom:6px">每周安排</div><div style="font-size:22px;font-weight:900;color:var(--blue)">6+1天</div><div style="font-size:11px;color:var(--txt3)">6天学习，1天休息</div></div>
+        <div class="card" style="margin-bottom:0;text-align:center"><div style="font-size:13px;color:var(--txt3);margin-bottom:6px">项目复杂度</div><div style="font-size:22px;font-weight:900;color:var(--cyan)">高强度</div><div style="font-size:11px;color:var(--txt3)">接受挑战，喜欢高强度</div></div>
+        <div class="card" style="margin-bottom:0;text-align:center"><div style="font-size:13px;color:var(--txt3);margin-bottom:6px">健康管理</div><div style="font-size:22px;font-weight:900;color:var(--emerald)">固定作息</div><div style="font-size:11px;color:var(--txt3)">每日运动 + 规律休息</div></div>
+    </div>
+
+    <div class="ins">
+        <p><strong>应急计划：</strong>进度落后20% → 简化非核心功能；落后40% → 延长1-2周；关键难点卡住 → 寻求社区/付费咨询帮助。</p>
+    </div>
+</section>
+
+<!-- WEEK 1 -->
+<section class="sec" id="w1">
+    <div class="wk-hdr"><div class="wk-num">01</div><div class="wk-info"><h3>AI编程环境 + Python速成</h3><p>2026.05.18 — 05.24 · 目标：完成Python基础 + 第一个GitHub项目</p></div></div>
+    <table class="dt">
+        <thead><tr><th>日期</th><th>上午 (9:00-11:00)</th><th>下午 (14:00-17:00)</th><th>晚上 (20:00-22:00)</th><th>健康</th></tr></thead>
+        <tbody>
+            <tr><td class="day-cell">Day 1<br><span class="dd">05.18</span></td><td>安装配置<br>• Cursor + VS Code<br>• Python 3.11+<br>• Git</td><td>Python基础1<br>• 变量与数据类型<br>• 控制流程</td><td>复习+笔记<br>• 整理学习点<br>• 准备明日</td><td>30分钟散步</td></tr>
+            <tr><td class="day-cell">Day 2<br><span class="dd">05.19</span></td><td>Python基础2<br>• 函数定义<br>• 模块导入</td><td>实践练习<br>• 计算器程序<br>• 文件操作</td><td>GitHub入门<br>• 创建账户<br>• 第一个仓库</td><td>眼保健操</td></tr>
+            <tr><td class="day-cell">Day 3<br><span class="dd">05.20</span></td><td>Python基础3<br>• 面向对象<br>• 异常处理</td><td>项目1开始<br>• 天气查询CLI<br>• requests库</td><td>代码优化<br>• 错误处理<br>• 完善文档</td><td>拉伸运动</td></tr>
+            <tr><td class="day-cell">Day 4<br><span class="dd">05.21</span></td><td>Web基础<br>• HTTP协议<br>• RESTful API</td><td>FastAPI入门<br>• 安装配置<br>• 第一个端点</td><td>项目1完成<br>• 提交GitHub<br>• 写README</td><td>户外活动</td></tr>
+            <tr><td class="day-cell">Day 5<br><span class="dd">05.22</span></td><td>数据库基础<br>• SQLite<br>• SQLAlchemy</td><td>项目2开始<br>• 博客API<br>• 用户模型</td><td>继续项目2<br>• 文章模型<br>• CRUD操作</td><td>眼保健操</td></tr>
+            <tr><td class="day-cell">Day 6<br><span class="dd">05.23</span></td><td>项目2完善<br>• 认证<br>• 分页</td><td>测试与部署<br>• Pytest<br>• 本地测试</td><td>周总结<br>• 整理成果<br>• 准备下周</td><td>完全休息</td></tr>
+            <tr class="rest-row"><td class="day-cell">Day 7<br><span class="dd">05.24</span></td><td colspan="4">休息日 — 计划下周 · 运动放松 · 不接触学习内容</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- WEEK 2 -->
+<section class="sec" id="w2">
+    <div class="wk-hdr"><div class="wk-num">02</div><div class="wk-info"><h3>FastAPI进阶 + AI入门</h3><p>2026.05.25 — 05.31 · 目标：完成博客API + 第一个AI对话原型</p></div></div>
+    <table class="dt">
+        <thead><tr><th>日期</th><th>核心任务</th><th>技术重点</th><th>产出物</th></tr></thead>
+        <tbody>
+            <tr><td class="day-cell">Day 8<br><span class="dd">05.25</span></td><td>项目2完成<br>• API文档<br>• 前端界面(可选)</td><td>FastAPI高级<br>• 依赖注入<br>• 中间件</td><td><span class="tag t-blue">可运行</span> 博客API</td></tr>
+            <tr><td class="day-cell">Day 9<br><span class="dd">05.26</span></td><td>LangChain入门<br>• 核心概念<br>• 安装配置</td><td>LLM / Prompt<br>Chains / Memory</td><td>环境配置完成</td></tr>
+            <tr><td class="day-cell">Day 10<br><span class="dd">05.27</span></td><td>第一个AI应用<br>• OpenAI API<br>• 对话机器人</td><td>Prompt Engineering<br>流式输出</td><td><span class="tag t-emerald">AI对话</span> 原型</td></tr>
+            <tr><td class="day-cell">Day 11<br><span class="dd">05.28</span></td><td>RAG概念学习<br>• 文档加载<br>• 文本分割</td><td>LangChain加载器<br>TextSplitter</td><td>理解RAG流程</td></tr>
+            <tr><td class="day-cell">Day 12<br><span class="dd">05.29</span></td><td>向量数据库<br>• Chroma安装<br>• 向量化原理</td><td>Embedding模型<br>向量检索</td><td>Chroma测试环境</td></tr>
+            <tr><td class="day-cell">Day 13<br><span class="dd">05.30</span></td><td>项目3开始<br>• RAG系统设计<br>• 架构规划</td><td>系统设计<br>技术选型</td><td>项目设计文档</td></tr>
+            <tr class="rest-row"><td class="day-cell">Day 14<br><span class="dd">05.31</span></td><td colspan="3">休息日 — 进度评估 · 调整计划</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- WEEK 3 -->
+<section class="sec" id="w3">
+    <div class="wk-hdr"><div class="wk-num">03</div><div class="wk-info"><h3>RAG系统实战</h3><p>2026.06.01 — 06.07 · 目标：完成智能文档知识库系统并上线</p></div></div>
+    <table class="dt">
+        <thead><tr><th>日期</th><th>上午</th><th>下午</th><th>产出里程碑</th></tr></thead>
+        <tbody>
+            <tr><td class="day-cell">06.01</td><td>文档处理模块<br>• PDF解析<br>• 文本清洗</td><td>向量化模块<br>• Embedding调用<br>• 存储Chroma</td><td><span class="tag t-cyan">文档→向量</span> 流程跑通</td></tr>
+            <tr><td class="day-cell">06.02</td><td>检索模块<br>• 相似度计算<br>• Top-K检索</td><td>生成模块<br>• Prompt组装<br>• LLM调用</td><td><span class="tag t-emerald">完整RAG</span> 链条</td></tr>
+            <tr><td class="day-cell">06.03</td><td>前端界面<br>• Streamlit<br>• 文件上传</td><td>功能集成<br>• 前后端联调<br>• 错误处理</td><td><span class="tag t-blue">可交互</span> Web界面</td></tr>
+            <tr><td class="day-cell">06.04</td><td>性能优化<br>• 缓存机制<br>• 批量处理</td><td>测试完善<br>• 单元测试<br>• 集成测试</td><td>性能提升报告</td></tr>
+            <tr><td class="day-cell">06.05</td><td>项目3完成<br>• 文档完善<br>• 部署准备</td><td>部署实践<br>• Dockerfile<br>• 容器化</td><td><span class="tag t-violet">Docker</span> 镜像</td></tr>
+            <tr><td class="day-cell">06.06</td><td>云部署<br>• 阿里云购买<br>• 环境配置</td><td>上线运行<br>• 域名绑定<br>• 监控设置</td><td><span class="tag t-gold">在线可访问</span> 系统</td></tr>
+            <tr class="rest-row"><td class="day-cell">06.07</td><td colspan="3">休息日 — 项目3总结 · 技术博客1</td></tr>
+        </tbody>
+    </table>
+
+    <div class="ins">
+        <p><strong>里程碑：</strong>第3周末 — RAG系统上线运行，GitHub提交>15次，技术博客1篇</p>
+    </div>
+</section>
+
+<!-- WEEK 4 -->
+<section class="sec" id="w4">
+    <div class="wk-hdr"><div class="wk-num">04</div><div class="wk-info"><h3>RAG优化 + 多Agent入门</h3><p>2026.06.08 — 06.14 · 目标：RAG中级→高级 + Agent概念掌握</p></div></div>
+    <table class="dt">
+        <thead><tr><th>周目标</th><th>具体任务</th><th>技术深度</th><th>风险评估</th></tr></thead>
+        <tbody>
+            <tr><td><span class="tag t-blue">优化RAG</span></td><td>• 混合检索策略<br>• 重排序模型<br>• 来源追踪</td><td>中级 → 高级</td><td><span class="tag t-amber">中等</span></td></tr>
+            <tr><td><span class="tag t-violet">多Agent基础</span></td><td>• Agent概念<br>• LangGraph入门<br>• 简单协作</td><td>初级 → 中级</td><td><span class="tag t-emerald">低</span></td></tr>
+            <tr><td><span class="tag t-gold">项目4开始</span></td><td>• 任务管理系统设计<br>• Agent角色定义</td><td>系统设计</td><td><span class="tag t-amber">中等</span></td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- WEEK 5 -->
+<section class="sec" id="w5">
+    <div class="wk-hdr"><div class="wk-num">05</div><div class="wk-info"><h3>多Agent系统开发</h3><p>2026.06.15 — 06.21 · 目标：完成多Agent任务管理系统</p></div></div>
+    <table class="dt">
+        <thead><tr><th>Agent类型</th><th>功能职责</th><th>开发时间</th><th>集成测试</th></tr></thead>
+        <tbody>
+            <tr><td><span class="tag t-blue">任务分解Agent</span></td><td>理解需求，拆分子任务</td><td>1.5天</td><td>Day 1-2</td></tr>
+            <tr><td><span class="tag t-cyan">执行Agent</span></td><td>执行具体任务，调用工具</td><td>2天</td><td>Day 3-4</td></tr>
+            <tr><td><span class="tag t-violet">协调Agent</span></td><td>管理流程，处理冲突</td><td>1.5天</td><td>Day 5-6</td></tr>
+            <tr><td><span class="tag t-gold">系统集成</span></td><td>工作流引擎，状态管理</td><td>1天</td><td>Day 7</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- WEEK 6 -->
+<section class="sec" id="w6">
+    <div class="wk-hdr"><div class="wk-num">06</div><div class="wk-info"><h3>电商多Agent系统</h3><p>2026.06.22 — 06.28 · 核心项目5：电商智能客服系统</p></div></div>
+
+    <div class="card">
+        <div class="card-t"><span class="ic" style="background:rgba(91,141,239,.12)">🎯</span>系统架构</div>
+        <div class="code-blk">用户输入 → 意图识别Agent → 路由决策 →
+├─ 产品查询Agent → 数据库查询 → 响应生成
+├─ 订单处理Agent → 订单系统API → 状态更新  
+└─ 售后客服Agent → 知识库检索 → 解决方案</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px;">
+        <div class="card" style="margin-bottom:0;padding:16px"><div style="font-size:12px;color:var(--blue);font-weight:700;margin-bottom:6px">框架</div><p style="color:var(--txt2);font-size:13px">LangGraph + 自定义Agent</p></div>
+        <div class="card" style="margin-bottom:0;padding:16px"><div style="font-size:12px;color:var(--cyan);font-weight:700;margin-bottom:6px">数据库</div><p style="color:var(--txt2);font-size:13px">PostgreSQL + Redis缓存</p></div>
+        <div class="card" style="margin-bottom:0;padding:16px"><div style="font-size:12px;color:var(--violet);font-weight:700;margin-bottom:6px">API</div><p style="color:var(--txt2);font-size:13px">FastAPI后端 + 前端界面</p></div>
+        <div class="card" style="margin-bottom:0;padding:16px"><div style="font-size:12px;color:var(--emerald);font-weight:700;margin-bottom:6px">部署</div><p style="color:var(--txt2);font-size:13px">Docker Compose + 云服务器</p></div>
+    </div>
+</section>
+
+<!-- WEEK 7 -->
+<section class="sec" id="w7">
+    <div class="wk-hdr"><div class="wk-num">07</div><div class="wk-info"><h3>系统优化 + 部署</h3><p>2026.06.29 — 07.05 · 目标：系统性能达标 + 一键部署</p></div></div>
+    <table class="dt">
+        <thead><tr><th>优化维度</th><th>具体措施</th><th>预期效果</th><th>时间</th></tr></thead>
+        <tbody>
+            <tr><td><span class="tag t-blue">性能</span></td><td>• 异步处理<br>• 缓存策略<br>• 连接池</td><td>响应时间 &lt;2s</td><td>2天</td></tr>
+            <tr><td><span class="tag t-emerald">稳定性</span></td><td>• 错误重试<br>• 熔断机制<br>• 监控告警</td><td>可用性 &gt;99%</td><td>1.5天</td></tr>
+            <tr><td><span class="tag t-violet">可维护性</span></td><td>• 日志系统<br>• 配置管理<br>• 文档完善</td><td>易于扩展</td><td>1.5天</td></tr>
+            <tr><td><span class="tag t-gold">部署</span></td><td>• CI/CD流水线<br>• 多环境配置</td><td>一键部署</td><td>1天</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- WEEK 8 -->
+<section class="sec" id="w8">
+    <div class="wk-hdr"><div class="wk-num">08</div><div class="wk-info"><h3>作品集 + 求职冲刺</h3><p>2026.07.06 — 07.12 · 目标：所有求职材料准备完成，开始投递</p></div></div>
+    <table class="dt">
+        <thead><tr><th>日期</th><th>上午</th><th>下午</th><th>产出物</th></tr></thead>
+        <tbody>
+            <tr><td class="day-cell">07.06</td><td>作品集整理<br>• GitHub优化<br>• README标准化</td><td>技术博客<br>• RAG实战总结<br>• 多Agent设计</td><td><span class="tag t-blue">3篇</span> 技术文章</td></tr>
+            <tr><td class="day-cell">07.07</td><td>简历制作<br>• 项目经验提炼<br>• 技能矩阵</td><td>作品集网站<br>• GitHub Pages<br>• 项目展示</td><td><span class="tag t-emerald">在线简历</span></td></tr>
+            <tr><td class="day-cell">07.08</td><td>证书考试<br>• 人工智能训练师<br>• 模拟测试</td><td>证书申请<br>• 提交材料<br>• 跟踪进度</td><td>证书获取</td></tr>
+            <tr><td class="day-cell">07.09</td><td>面试准备<br>• 常见问题整理<br>• 技术深度</td><td>模拟面试<br>• 录制回答<br>• 自我评估</td><td>面试题库</td></tr>
+            <tr><td class="day-cell">07.10</td><td>求职平台<br>• BOSS直聘注册<br>• 简历上传</td><td>求职策略<br>• 目标公司列表<br>• 投递计划</td><td>求职清单</td></tr>
+            <tr><td class="day-cell">07.11</td><td>最终检查<br>• 材料复核<br>• 演示环境</td><td>心理准备<br>• 面试心态<br>• 薪资谈判</td><td>准备完成</td></tr>
+            <tr style="background:rgba(232,184,75,.06)"><td class="day-cell" style="color:var(--gold)">07.12</td><td colspan="2" style="font-weight:700;color:var(--gold)">🚀 开始投递简历 · 面试安排 · 求职正式启动！</td><td><span class="tag t-gold">求职启动</span></td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- RESOURCES -->
+<section class="sec" id="resource">
+    <div class="sec-h"><div class="sec-n">R</div><div><div class="sec-t">学习资源矩阵</div><div class="sec-d">精选资源 · 免费核心 + 付费关键</div></div></div>
+
+    <div class="sub"><h3 class="sub-t">免费核心资源</h3></div>
+    <div class="res-grid">
+        <div class="res"><h4><span class="tag t-blue">Python</span> 基础</h4><p>廖雪峰Python教程</p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400" target="_blank">liaoxuefeng.com</a></div>
+        <div class="res"><h4><span class="tag t-cyan">FastAPI</span> 框架</h4><p>官方文档(中文)</p><a href="https://fastapi.tiangolo.com/zh/" target="_blank">fastapi.tiangolo.com</a></div>
+        <div class="res"><h4><span class="tag t-violet">LangChain</span> AI框架</h4><p>官方文档 + Chatchat</p><a href="https://python.langchain.com/docs/" target="_blank">python.langchain.com</a></div>
+        <div class="res"><h4><span class="tag t-emerald">向量DB</span> 数据库</h4><p>Chroma + Qdrant文档</p><a href="https://docs.trychroma.com/" target="_blank">docs.trychroma.com</a></div>
+    </div>
+
+    <div class="sub" style="margin-top:28px"><h3 class="sub-t">付费关键资源（预算内）</h3></div>
+    <div class="res-grid">
+        <div class="res"><h4><span class="tag t-gold">极客时间</span> ¥299</h4><p>《LangChain实战》《AI大模型应用开发》</p></div>
+        <div class="res"><h4><span class="tag t-amber">深蓝学院</span> ¥399</h4><p>《多智能体系统设计与实现》</p></div>
+        <div class="res"><h4><span class="tag t-blue">API服务</span> ¥200</h4><p>OpenAI API额度 + 阿里云服务器</p></div>
+        <div class="res"><h4><span class="tag t-rose">GPU资源</span> 免费</h4><p>Google Colab（免费GPU）</p></div>
+    </div>
+</section>
+
+<!-- BUDGET -->
+<section class="sec" id="budget">
+    <div class="sec-h"><div class="sec-n">B</div><div><div class="sec-t">预算执行计划</div><div class="sec-d">总计 ¥600-1000 · 符合预算范围</div></div></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
+        <div class="card" style="margin-bottom:0">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="tag t-emerald">第1-2周</span><span style="font-size:13px;color:var(--txt3)">¥0-100</span></div>
+            <ul class="bl"><li>主要投入：时间精力</li><li>资金投入：无或极少</li></ul>
+        </div>
+        <div class="card" style="margin-bottom:0">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="tag t-blue">第3-4周</span><span style="font-size:13px;color:var(--txt3)">¥200-300</span></div>
+            <ul class="bl"><li>云服务器：¥50</li><li>API测试：¥50</li><li>付费课程：¥100</li></ul>
+        </div>
+        <div class="card" style="margin-bottom:0">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="tag t-violet">第5-6周</span><span style="font-size:13px;color:var(--txt3)">¥200-300</span></div>
+            <ul class="bl"><li>服务器续费：¥50</li><li>API正式使用：¥100</li><li>域名注册：¥50</li></ul>
+        </div>
+        <div class="card" style="margin-bottom:0">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="tag t-gold">第7-8周</span><span style="font-size:13px;color:var(--txt3)">¥200-300</span></div>
+            <ul class="bl"><li>证书考试：¥300</li><li>备用金：¥0-100</li><li>求职相关：¥0-100</li></ul>
+        </div>
+    </div>
+
+    <div class="budget-bar">
+        <div style="width:10%;background:var(--emerald)">10%</div>
+        <div style="width:25%;background:var(--blue)">25%</div>
+        <div style="width:25%;background:var(--violet)">25%</div>
+        <div style="width:40%;background:var(--gold)">40%</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--txt3);padding:0 4px">
+        <span>第1-2周</span><span>第3-4周</span><span>第5-6周</span><span>第7-8周</span>
+    </div>
+</section>
+
+<!-- RISK -->
+<section class="sec" id="risk">
+    <div class="sec-h"><div class="sec-n">!</div><div><div class="sec-t">风险应对方案</div><div class="sec-d">技术 · 时间 · 健康 · 应急</div></div></div>
+
+    <div class="risk-grid">
+        <div class="risk">
+            <h4>⚠️ 技术风险</h4>
+            <ul class="rl"><li>Python学习慢</li><li>RAG效果差</li><li>多Agent复杂</li></ul>
+            <div class="st">✅ 应对策略</div>
+            <ul class="sl"><li>使用AI辅助，重点理解而非记忆</li><li>简化需求，先用简单检索再优化</li><li>从2个Agent开始，逐步增加</li></ul>
+        </div>
+        <div class="risk">
+            <h4>⚠️ 时间风险</h4>
+            <ul class="rl"><li>进度落后20%</li><li>进度落后40%</li><li>关键难点卡住</li></ul>
+            <div class="st">✅ 应对策略</div>
+            <ul class="sl"><li>简化非核心功能，保证核心完成</li><li>延长1-2周学习时间</li><li>寻求帮助（社区/付费咨询）</li></ul>
+        </div>
+        <div class="risk">
+            <h4>⚠️ 健康风险</h4>
+            <ul class="rl"><li>久坐疲劳</li><li>用眼过度</li><li>心理压力</li></ul>
+            <div class="st">✅ 应对策略</div>
+            <ul class="sl"><li>每日运动：上午学习前30分钟</li><li>每50分钟休息10分钟</li><li>周日完全休息，不接触学习</li></ul>
+        </div>
+    </div>
+
+    <div class="ins" style="margin-top:20px">
+        <p><strong>应急调整机制：</strong>每周日晚上评估进度 → 优先保证核心项目 → 遇到瓶颈切换学习方式 → 健康预警立即减少强度</p>
+    </div>
+</section>
+
+<!-- PROJECT QUALITY -->
+<section class="sec">
+    <div class="sec-h"><div class="sec-n">Q</div><div><div class="sec-t">项目质量要求</div><div class="sec-d">可运行 · 可演示 · 可面试</div></div></div>
+
+    <div class="sub"><h3 class="sub-t">项目3：智能文档知识库系统</h3></div>
+    <div class="card">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+            <div>
+                <div style="font-weight:700;color:var(--gold);margin-bottom:10px;font-size:14px">核心功能</div>
+                <ul class="chk"><li>多格式文档上传（PDF/Word/TXT）</li><li>智能语义检索（基于内容）</li><li>问答生成与来源引用</li><li>用户管理界面</li></ul>
+            </div>
+            <div>
+                <div style="font-weight:700;color:var(--cyan);margin-bottom:10px;font-size:14px">技术指标</div>
+                <ul class="chk"><li>响应时间 &lt; 3秒</li><li>准确率 &gt; 80%</li><li>并发支持 10+ 用户</li><li>可用性 7×24小时</li></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="sub" style="margin-top:24px"><h3 class="sub-t">项目5：电商多Agent客服系统</h3></div>
+    <div class="card">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+            <div>
+                <div style="font-weight:700;color:var(--blue);margin-bottom:10px;font-size:14px">架构要求</div>
+                <ul class="chk"><li>模块化Agent设计（可扩展）</li><li>工作流引擎（可视化）</li><li>状态管理（持久化）</li><li>监控面板（实时状态）</li></ul>
+            </div>
+            <div>
+                <div style="font-weight:700;color:var(--violet);margin-bottom:10px;font-size:14px">业务功能</div>
+                <ul class="chk"><li>产品查询（数据库+向量检索）</li><li>订单处理（模拟API调用）</li><li>售后咨询（知识库+RAG）</li><li>用户反馈（学习优化）</li></ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OUTPUT FILES -->
+<section class="sec">
+    <div class="sec-h"><div class="sec-n">F</div><div><div class="sec-t">模块输出文件</div><div class="sec-d">6份可交付物</div></div></div>
+    <div class="out-grid">
+        <div class="out"><div class="oi">📅</div><h5>8周计划表</h5><p>Excel格式，每日任务</p></div>
+        <div class="out"><div class="oi">📆</div><h5>学习日历</h5><p>iCal格式，可导入</p></div>
+        <div class="out"><div class="oi">🔗</div><h5>资源链接库</h5><p>HTML页面，一键访问</p></div>
+        <div class="out"><div class="oi">📝</div><h5>项目需求文档</h5><p>Markdown格式</p></div>
+        <div class="out"><div class="oi">📊</div><h5>进度跟踪模板</h5><p>Notion模板</p></div>
+        <div class="out"><div class="oi">💰</div><h5>预算跟踪表</h5><p>Google Sheets</p></div>
+    </div>
+</section>
+
+<!-- MILESTONES -->
+<section class="sec">
+    <div class="sec-h"><div class="sec-n">M</div><div><div class="sec-t">月度里程碑检查</div><div class="sec-d">关键指标追踪</div></div></div>
+    <div class="tl">
+        <div class="tl-i"><h4><span class="tag t-cyan">第4周末</span> 06.14</h4><p>RAG系统上线运行 · GitHub提交 &gt;15次 · 技术博客1篇</p></div>
+        <div class="tl-i"><h4><span class="tag t-violet">第6周末</span> 06.28</h4><p>电商多Agent系统完成 · 可运行项目 ≥2个 · 在线演示 ≥1个</p></div>
+        <div class="tl-i"><h4><span class="tag t-gold">第8周末</span> 07.12</h4><p>求职材料准备完成 · 技术博客 ≥3篇 · 证书获取 · 开始投递</p></div>
+    </div>
+</section>
+
+<!-- ACTION -->
+<section class="sec" id="action">
+    <div class="sec-h"><div class="sec-n">→</div><div><div class="sec-t">下一步行动</div><div class="sec-d">今天就开始！</div></div></div>
+
+    <div class="concl">
+        <h3>🚀 立即行动（今天开始）</h3>
+        <ol class="nl">
+            <li><strong>安装环境</strong>：Cursor + VS Code + Python 3.11+</li>
+            <li><strong>创建GitHub</strong>：注册账户，创建第一个仓库</li>
+            <li><strong>制定日计划</strong>：按第1周Day 1计划开始执行</li>
+            <li><strong>健康管理</strong>：设置运动提醒，固定作息时间</li>
+        </ol>
+    </div>
+
+    <div class="phase-grid" style="margin-top:20px">
+        <div class="phase p1">
+            <div class="pl">本周目标</div>
+            <h4>05.18 — 05.24</h4>
+            <ol>
+                <li>完成Python基础学习</li>
+                <li>完成第一个GitHub项目</li>
+                <li>建立每日学习习惯</li>
+                <li>适应7小时学习强度</li>
+            </ol>
+        </div>
+        <div class="phase p2">
+            <div class="pl">中期准备</div>
+            <h4>关键节点</h4>
+            <ol>
+                <li>第4周末：准备云服务器预算</li>
+                <li>第6周末：开始准备证书考试</li>
+                <li>第8周末：开始求职投递</li>
+            </ol>
+        </div>
+        <div class="phase p3">
+            <div class="pl">长期规划</div>
+            <h4>求职启动后</h4>
+            <ol>
+                <li>持续投递，每周复盘</li>
+                <li>根据面试反馈补短板</li>
+                <li>入职后继续深耕技术</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+</div>
+
+<footer class="ft">
+    <p>2个月强化学习路径 · AI应用工程师 · 2026.05.18 — 07.12</p>
+    <p style="margin-top:6px;">336小时 · 5个实战项目 · 从零到求职</p>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('vis',window.scrollY>400));
+const secs=document.querySelectorAll('.sec');
+const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.style.animation='fi .5s ease both'})},{threshold:.08});
+secs.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>

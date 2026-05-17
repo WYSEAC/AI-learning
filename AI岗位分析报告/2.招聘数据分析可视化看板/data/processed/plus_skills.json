@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Docker",
+    "value": 371
+  },
+  {
+    "name": "Git",
+    "value": 351
+  },
+  {
+    "name": "MySQL",
+    "value": 301
+  },
+  {
+    "name": "React",
+    "value": 270
+  },
+  {
+    "name": "Redis",
+    "value": 244
+  },
+  {
+    "name": "LoRA",
+    "value": 203
+  },
+  {
+    "name": "Vue",
+    "value": 160
+  },
+  {
+    "name": "CI/CD",
+    "value": 158
+  },
+  {
+    "name": "Kubernetes",
+    "value": 154
+  },
+  {
+    "name": "Cloud",
+    "value": 149
+  },
+  {
+    "name": "K8s",
+    "value": 142
+  },
+  {
+    "name": "GitHub",
+    "value": 141
+  },
+  {
+    "name": "PostgreSQL",
+    "value": 134
+  },
+  {
+    "name": "SFT",
+    "value": 122
+  },
+  {
+    "name": "TypeScript",
+    "value": 121
+  },
+  {
+    "name": "QLoRA",
+    "value": 113
+  },
+  {
+    "name": "AWS",
+    "value": 101
+  },
+  {
+    "name": "JavaScript",
+    "value": 99
+  },
+  {
+    "name": "Fine-tuning",
+    "value": 91
+  },
+  {
+    "name": "CSS",
+    "value": 73
+  },
+  {
+    "name": "Elasticsearch",
+    "value": 70
+  },
+  {
+    "name": "HTML",
+    "value": 64
+  },
+  {
+    "name": "DevOps",
+    "value": 55
+  },
+  {
+    "name": "Azure",
+    "value": 51
+  },
+  {
+    "name": "MongoDB",
+    "value": 51
+  },
+  {
+    "name": "MLOps",
+    "value": 42
+  },
+  {
+    "name": "GCP",
+    "value": 29
+  },
+  {
+    "name": "Model Training",
+    "value": 15
+  },
+  {
+    "name": "Next.js",
+    "value": 14
+  },
+  {
+    "name": "Scalable",
+    "value": 11
+  },
+  {
+    "name": "Distributed",
+    "value": 2
+  }
+]
