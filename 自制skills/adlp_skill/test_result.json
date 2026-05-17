@@ -1,0 +1,516 @@
+{
+  "market_data": {
+    "keyword": "AI工程师",
+    "total_jobs": 8500,
+    "avg_salary": 35000,
+    "top_skills": [
+      {
+        "name": "Python",
+        "count": 0,
+        "avg_salary_boost": 0.0
+      },
+      {
+        "name": "ML",
+        "count": 0,
+        "avg_salary_boost": 0.0
+      },
+      {
+        "name": "DL",
+        "count": 0,
+        "avg_salary_boost": 0.0
+      },
+      {
+        "name": "PyTorch",
+        "count": 0,
+        "avg_salary_boost": 0.0
+      },
+      {
+        "name": "TensorFlow",
+        "count": 0,
+        "avg_salary_boost": 0.0
+      }
+    ]
+  },
+  "user_profile": {
+    "name": "小明",
+    "background": "2年Java开发",
+    "current_role": ""
+  },
+  "skill_gaps": [
+    {
+      "skill": "Python",
+      "current": "入门",
+      "target": "进阶",
+      "gap": 2,
+      "hours": 74
+    },
+    {
+      "skill": "ML",
+      "current": "入门",
+      "target": "进阶",
+      "gap": 2,
+      "hours": 65
+    },
+    {
+      "skill": "DL",
+      "current": "入门",
+      "target": "进阶",
+      "gap": 2,
+      "hours": 70
+    },
+    {
+      "skill": "PyTorch",
+      "current": "入门",
+      "target": "进阶",
+      "gap": 2,
+      "hours": 68
+    },
+    {
+      "skill": "TensorFlow",
+      "current": "入门",
+      "target": "进阶",
+      "gap": 2,
+      "hours": 71
+    },
+    {
+      "skill": "沟通能力",
+      "current": "入门",
+      "target": "入门",
+      "gap": 1,
+      "hours": 31
+    },
+    {
+      "skill": "团队协作",
+      "current": "入门",
+      "target": "入门",
+      "gap": 1,
+      "hours": 31
+    },
+    {
+      "skill": "项目管理",
+      "current": "入门",
+      "target": "入门",
+      "gap": 1,
+      "hours": 30
+    },
+    {
+      "skill": "敏捷开发",
+      "current": "入门",
+      "target": "入门",
+      "gap": 1,
+      "hours": 26
+    },
+    {
+      "skill": "系统设计",
+      "current": "入门",
+      "target": "入门",
+      "gap": 1,
+      "hours": 32
+    }
+  ],
+  "learning_path": {
+    "total_weeks": 12,
+    "phases": 4,
+    "risks": [
+      {
+        "type": "时间不足",
+        "level": "高",
+        "description": "技能学习预计需要 635 小时，但可用时间仅 240 小时",
+        "mitigation": "优先学习关键技能，降低非核心技能的深度要求；考虑延长学习周期或增加每日投入时间",
+        "affected_skills": [
+          "Python",
+          "ML",
+          "DL",
+          "PyTorch",
+          "TensorFlow"
+        ]
+      },
+      {
+        "type": "资源可用性",
+        "level": "低",
+        "description": "学习资源获取、开发环境配置等因素可能影响学习进度",
+        "mitigation": "提前准备学习资料清单，确认开发环境可正常使用，建议准备备用学习资源",
+        "affected_skills": []
+      }
+    ]
+  },
+  "projects": [
+    {
+      "tier": "入门实战",
+      "name": "Python入门练习项目",
+      "description": "通过小型项目熟悉 Python 的基本用法和最佳实践",
+      "difficulty": "入门",
+      "estimated_hours": 8,
+      "skills_covered": [
+        "Python"
+      ],
+      "deliverables": [
+        "可运行的 Python 练习代码",
+        "学习笔记与踩坑记录"
+      ],
+      "success_criteria": [
+        "代码能正常运行并产生预期结果",
+        "理解核心API和基本概念",
+        "完成至少2个基础功能的实现"
+      ]
+    },
+    {
+      "tier": "核心项目",
+      "name": "AI工程师核心功能模块 #1",
+      "description": "综合运用 Python、ML 开发AI工程师的核心功能模块",
+      "difficulty": "中等",
+      "estimated_hours": 20,
+      "skills_covered": [
+        "Python",
+        "ML"
+      ],
+      "deliverables": [
+        "完整的功能模块源码",
+        "单元测试代码",
+        "模块使用文档"
+      ],
+      "success_criteria": [
+        "模块功能完整且通过单元测试",
+        "代码结构清晰，注释规范",
+        "文档清晰可读"
+      ]
+    },
+    {
+      "tier": "核心项目",
+      "name": "AI工程师核心功能模块 #2",
+      "description": "综合运用 DL、PyTorch 开发AI工程师的核心功能模块",
+      "difficulty": "中等",
+      "estimated_hours": 20,
+      "skills_covered": [
+        "DL",
+        "PyTorch"
+      ],
+      "deliverables": [
+        "完整的功能模块源码",
+        "单元测试代码",
+        "模块使用文档"
+      ],
+      "success_criteria": [
+        "模块功能完整且通过单元测试",
+        "代码结构清晰，注释规范",
+        "文档清晰可读"
+      ]
+    },
+    {
+      "tier": "综合挑战",
+      "name": "AI工程师端到端综合项目",
+      "description": "从零开始构建一个完整的AI工程师应用，覆盖全栈技能",
+      "difficulty": "困难",
+      "estimated_hours": 40,
+      "skills_covered": [
+        "Python",
+        "ML",
+        "DL",
+        "PyTorch",
+        "TensorFlow",
+        "沟通能力"
+      ],
+      "deliverables": [
+        "完整项目源码（GitHub仓库）",
+        "架构设计与技术方案文档",
+        "部署上线链接",
+        "项目演示视频"
+      ],
+      "success_criteria": [
+        "项目功能完整，可以上线运行",
+        "代码质量达到生产级标准",
+        "具备完整的CI/CD流程",
+        "能作为面试作品展示"
+      ]
+    },
+    {
+      "tier": "展示作品",
+      "name": "个人技术品牌展示页",
+      "description": "打造专业的个人技术作品集，展示所有项目成果",
+      "difficulty": "中等",
+      "estimated_hours": 20,
+      "skills_covered": [
+        "HTML/CSS",
+        "前端框架",
+        "文档写作"
+      ],
+      "deliverables": [
+        "个人作品集网站（在线可访问）",
+        "GitHub Profile README优化",
+        "项目成果展示PPT",
+        "技术博客（至少2篇）"
+      ],
+      "success_criteria": [
+        "作品集页面专业美观",
+        "所有核心项目都有完善的README",
+        "至少发布2篇高质量技术文章",
+        "简历中可引用的项目成果"
+      ]
+    }
+  ],
+  "career_prep": {
+    "portfolio": {
+      "personal_brand": {
+        "suggested_title": "AI工程师工程师",
+        "tagline": "从转行AI工程师",
+        "github_optimization": [
+          "完善 GitHub Profile README，展示技术栈和核心项目",
+          "为每个项目编写清晰的 README（含架构图、Demo链接、快速开始指南）",
+          "保持 commit 记录活跃，体现学习成长曲线",
+          "Star 相关领域优质开源项目并参与讨论"
+        ],
+        "blog_suggestions": [
+          "《我是如何从零开始学习Python的》",
+          "《AI工程师入门路线与避坑指南》",
+          "《从项目实战中总结的N条经验》",
+          "《AI工程师面试常见问题与解答》"
+        ]
+      },
+      "project_showcase": {
+        "recommended_order": [
+          "Python入门实战",
+          "ML入门实战",
+          "DL入门实战",
+          "AI工程师核心模块开发",
+          "团队协作专项提升",
+          "AI工程师综合实战项目",
+          "个人作品集整理",
+          "AI工程师模拟面试冲刺"
+        ],
+        "presentation_tips": [
+          "每个项目用 STAR 法则描述（情境、任务、行动、结果）",
+          "附上在线 Demo 链接或截图",
+          "列出技术栈标签便于招聘方快速识别",
+          "突出个人贡献和解决的难点"
+        ]
+      },
+      "online_presence": {
+        "platforms": [
+          "GitHub",
+          "掘金",
+          "知乎",
+          "LinkedIn"
+        ],
+        "content_calendar": [
+          "第1周：发布第一篇学习总结文章",
+          "第3周：发布一个项目复盘",
+          "持续参与技术社区讨论，每周至少回答2个问题"
+        ]
+      }
+    },
+    "resume": "# 小明\n\n📧 邮箱：your_email@example.com　|　📱 电话：138xxxx8888\n🎯 求职意向：AI工程师　|　📍 期望城市：北京/上海/深圳\n💼 工作经验：0.0 年　|　🎓 学历：本科\n\n---\n\n## 💡 专业技能\n\n- **核心技术**：Python、ML、DL、PyTorch、TensorFlow、沟通能力\n- **其他技能**：团队协作、项目管理、敏捷开发、系统设计\n- **开发工具**：Git、VS Code、Docker、CI/CD\n- **语言能力**：英语（读写熟练）、普通话（母语）\n\n---\n\n## 🚀 项目经验\n\n### Python入门实战\n**技术栈**：Python\n\n**项目描述**：通过小项目掌握 Python 的基础用法\n\n**主要成果**：\n- Python练习代码\n- 学习笔记\n**个人贡献**：独立完成项目的需求分析、技术方案设计、核心功能开发与上线部署\n\n### ML入门实战\n**技术栈**：ML\n\n**项目描述**：通过小项目掌握 ML 的基础用法\n\n**主要成果**：\n- ML练习代码\n- 学习笔记\n**个人贡献**：独立完成项目的需求分析、技术方案设计、核心功能开发与上线部署\n\n### DL入门实战\n**技术栈**：DL\n\n**项目描述**：通过小项目掌握 DL 的基础用法\n\n**主要成果**：\n- DL练习代码\n- 学习笔记\n**个人贡献**：独立完成项目的需求分析、技术方案设计、核心功能开发与上线部署\n\n### AI工程师核心模块开发\n**技术栈**：PyTorch、TensorFlow、沟通能力\n\n**项目描述**：结合 PyTorch 和 TensorFlow 和 沟通能力 开发一个AI工程师相关功能模块\n\n**主要成果**：\n- 完整源码\n- 技术文档\n- 演示DEMO\n**个人贡献**：独立完成项目的需求分析、技术方案设计、核心功能开发与上线部署\n\n### 团队协作专项提升\n**技术栈**：团队协作\n\n**项目描述**：针对 团队协作 的专项强化训练\n\n**主要成果**：\n- 团队协作专项项目代码\n**个人贡献**：独立完成项目的需求分析、技术方案设计、核心功能开发与上线部署\n\n### AI工程师综合实战项目\n**技术栈**：项目管理、敏捷开发、系统设计\n\n**项目描述**：综合运用 项目管理、敏捷开发、系统设计 完成一个完整的AI工程师项目\n\n**主要成果**：\n- 完整项目源码\n- 架构设计文档\n- 部署文档\n- 演示视频\n**个人贡献**：独立完成项目的需求分析、技术方案设计、核心功能开发与上线部署\n\n### 个人作品集整理\n**技术栈**：Python、ML、DL、PyTorch、TensorFlow\n\n**项目描述**：整合所有学习项目成果为专业作品集\n\n**主要成果**：\n- 在线作品集网站\n- 项目README完善\n- 成果展示PPT\n**个人贡献**：独立完成项目的需求分析、技术方案设计、核心功能开发与上线部署\n\n### AI工程师模拟面试冲刺\n**技术栈**：Python、ML、DL、PyTorch、TensorFlow、沟通能力、团队协作、项目管理、敏捷开发、系统设计\n\n**项目描述**：系统整理面试知识点并进行模拟面试训练\n\n**主要成果**：\n- 面试题集整理\n- 模拟面试记录\n- 个人面试话术\n**个人贡献**：独立完成项目的需求分析、技术方案设计、核心功能开发与上线部署\n\n---\n\n## 💼 工作经历\n\n### \n**2年Java开发**\n\n- 拥有 0.0 年工作经验，具备良好的沟通协作和问题解决能力\n- 自主学习能力强，已完成 AI工程师 相关技能的系统学习和项目实践\n\n---\n\n## 🎓 教育背景\n\n- **本科** | 计算机/软件工程相关专业\n\n---\n\n## 🏆 自我评价\n\n- 拥有扎实的AI工程师技术基础，具备独立开发和解决问题的能力\n- 坚持通过项目驱动的方式学习，积累了丰富的实战经验\n- 有较强的自驱力和学习能力，能够快速适应新技术和团队协作\n",
+    "interview": {
+      "技术基础": {
+        "description": "考察计算机基础知识和核心技能掌握程度",
+        "questions": [
+          {
+            "question": "请介绍你对 Python、ML 的理解",
+            "tips": "从概念定义、核心原理、实际应用三个层次回答，结合项目经验举例"
+          },
+          {
+            "question": "在项目中遇到的最大的技术挑战是什么？你是如何解决的？",
+            "tips": "使用STAR法则，突出分析过程和解决问题的思路"
+          },
+          {
+            "question": "请解释你在项目中用到的核心设计模式及其应用场景",
+            "tips": "选择2-3个最熟悉的模式，说明为什么选择它以及带来的收益"
+          },
+          {
+            "question": "如何进行代码质量管理和技术债务控制？",
+            "tips": "提及代码审查、自动化测试、重构策略等实践"
+          }
+        ]
+      },
+      "项目经验": {
+        "description": "深入考察项目实战能力和问题解决经验",
+        "questions": [
+          {
+            "question": "请详细介绍你最有成就感的项目，包括架构设计和关键决策",
+            "tips": "准备架构图（白板画出），说明技术选型理由，数据流设计"
+          },
+          {
+            "question": "项目中如何处理性能瓶颈？请举例说明",
+            "tips": "从发现问题→定位原因→多种方案对比→最终实施→效果验证完整描述"
+          },
+          {
+            "question": "如果重新做这个项目，你会做出哪些不同的决策？",
+            "tips": "展示反思能力和成长思维，诚实分析不足之处"
+          }
+        ]
+      },
+      "系统设计": {
+        "description": "考察系统架构设计和方案评估能力",
+        "questions": [
+          {
+            "question": "设计一个AI工程师相关的核心系统，请描述你的设计思路",
+            "tips": "从需求分析→系统架构→模块设计→数据流→扩展性考虑，展现系统性思维"
+          },
+          {
+            "question": "如何处理系统的高可用和高并发？",
+            "tips": "从负载均衡、缓存策略、数据库优化、服务降级等维度回答"
+          },
+          {
+            "question": "设计一个完整的CI/CD流水线，需要考虑哪些方面？",
+            "tips": "覆盖代码管理、构建、测试、部署、监控各环节"
+          }
+        ]
+      },
+      "行为面试": {
+        "description": "考察软技能和文化匹配度",
+        "questions": [
+          {
+            "question": "为什么想从原岗位转到 {target.title} 领域？",
+            "tips": "展现真实的动机、长期的职业规划和对行业的热情"
+          },
+          {
+            "question": "分享一次你克服困难完成目标的经历",
+            "tips": "用具体的例子展示毅力、学习能力和解决问题的方法"
+          },
+          {
+            "question": "你如何保持技术学习的持续性和深度？",
+            "tips": "说明学习方法论、学习资源获取渠道和时间管理策略"
+          },
+          {
+            "question": "在团队协作中如何处理分歧？请举例",
+            "tips": "表现沟通能力、同理心和以结果为导向的合作态度"
+          }
+        ]
+      },
+      "薪资谈判": {
+        "description": "薪资谈判策略和话术准备",
+        "questions": [
+          {
+            "question": "你对薪资的期望是多少？",
+            "tips": "提前调研 AI工程师 的市场薪资范围（2.1万-4.9万/月），给出合理区间而非固定数字"
+          },
+          {
+            "question": "除了薪资还看重哪些方面？",
+            "tips": "提及技术成长空间、团队文化、业务方向、工作生活平衡等"
+          },
+          {
+            "question": "如果收到多个offer，你的选择标准是什么？",
+            "tips": "展现成熟的职业价值观，避免单一关注薪资"
+          }
+        ]
+      }
+    },
+    "strategy": {
+      "channels": [
+        {
+          "name": "BOSS直聘/拉勾",
+          "type": "主动投递",
+          "priority": "高",
+          "strategy": "每天主动联系10-15家目标公司，使用个性化招呼语",
+          "tips": "优化在线简历关键词，提升被搜索率"
+        },
+        {
+          "name": "LinkedIn/脉脉",
+          "type": "人脉推荐",
+          "priority": "高",
+          "strategy": "完善个人资料，添加目标公司HR和技术负责人",
+          "tips": "定期发布技术内容，展示专业度"
+        },
+        {
+          "name": "企业官网/内推",
+          "type": "精准投递",
+          "priority": "中",
+          "strategy": "直接访问目标公司招聘页面投递，寻找内部员工内推",
+          "tips": "内推可以显著提升简历通过率"
+        },
+        {
+          "name": "猎头渠道",
+          "type": "被动招聘",
+          "priority": "中",
+          "strategy": "保持LinkedIn资料更新，等待猎头联系",
+          "tips": "明确表达职业方向和期望"
+        },
+        {
+          "name": "技术社区/线下活动",
+          "type": "社交求职",
+          "priority": "低",
+          "strategy": "参加行业活动结识业内人士，了解隐性岗位机会",
+          "tips": "准备简洁的自我介绍（电梯演讲）"
+        }
+      ],
+      "timeline": {
+        "第1-2周": [
+          "完成简历定稿和作品集上线",
+          "在各招聘平台完善个人资料",
+          "开始投递非首选公司练手"
+        ],
+        "第3-4周": [
+          "根据反馈优化简历和面试表现",
+          "向目标公司发起投递",
+          "安排模拟面试巩固弱项"
+        ],
+        "第5-6周": [
+          "进入密集面试阶段",
+          "记录每次面试问题并复盘",
+          "开始收到offer并进行比较"
+        ],
+        "第7-8周": [
+          "进入薪资谈判阶段",
+          "综合评估offer并做出决策",
+          "准备入职材料"
+        ]
+      },
+      "target_companies": {
+        "tier1_top": {
+          "description": "行业头部公司，竞争激烈但回报丰厚",
+          "examples": [
+            "字节跳动",
+            "阿里巴巴",
+            "腾讯",
+            "美团",
+            "百度"
+          ],
+          "application_strategy": "准备充分后再投递，争取内推机会"
+        },
+        "tier2_growth": {
+          "description": "快速成长的独角兽/中等规模公司",
+          "examples": [
+            "小红书",
+            "B站",
+            "快手",
+            "得物",
+            "米哈游"
+          ],
+          "application_strategy": "重点关注技术和业务匹配度"
+        },
+        "tier3_startup": {
+          "description": "创业公司，适合快速成长",
+          "examples": [
+            "各类A轮到C轮的创业公司",
+            "垂直领域技术服务商"
+          ],
+          "application_strategy": "关注公司发展阶段和团队背景"
+        }
+      },
+      "salary_negotiation": {
+        "target_salary_range": "2.1万 - 4.9万/月",
+        "negotiation_tips": [
+          "先让对方出价，避免先暴露底牌",
+          "强调自身价值和项目成果，而非工作经验年限",
+          "考虑总包而非仅看月薪（期权、年终、福利等）",
+          "有多个offer时合理竞争，但要保持诚信"
+        ]
+      },
+      "kpi_metrics": {
+        "简历投递数": "50-100份（前2周广泛投递）",
+        "面试邀约率": "目标10-20%",
+        "一面通过率": "目标50%以上",
+        "最终offer数": "目标获得2-3个可比较的offer",
+        "求职周期": "预计4-8周"
+      }
+    },
+    "summary": {
+      "user_name": "小明",
+      "target_position": "AI工程师",
+      "total_learning_hours": 0,
+      "skills_count": 10,
+      "projects_count": 8,
+      "generated_at": "2026-05-18T03:04:15.437755"
+    }
+  },
+  "generated_at": "2026-05-18T03:04:15.437755"
+}

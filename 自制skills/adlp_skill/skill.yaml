@@ -1,0 +1,52 @@
+# ADLP Skill 定义文档
+# 此文件定义了 skill 的元数据、触发条件和使用方式
+
+name: adlp-framework
+version: 1.0.0
+description: |
+  AI-Driven Learning Project Framework（ADLP框架）
+  
+  通过AI辅助，将复杂的学习目标拆解为可执行的项目，通过数据驱动决策，实现高效学习转型。
+  
+  核心功能：
+  - 数据驱动的需求分析（招聘数据、技能需求、市场趋势）
+  - 个性化学习画像构建（能力评估、目标设定、匹配度分析）
+  - 结构化学习路径设计（时间规划、资源矩阵、风险分析）
+  - 项目驱动的实践学习（梯度项目、学习循环、进度跟踪）
+  - 成果导向的求职准备（作品集、简历、面试准备）
+
+triggers:
+  - 学习规划
+  - 职业转型
+  - 技能提升
+  - 求职准备
+  - 技术学习
+  - 转行AI
+  - 学习路径
+  - 个人发展计划
+
+usage:
+  cli: python -m adlp_skill.cli [command] [options]
+  python: from adlp_skill import ADLPEngine
+  
+commands:
+  analyze: 分析目标岗位需求和技能缺口
+  profile: 构建个人学习画像
+  plan: 生成结构化学习路径
+  track: 跟踪学习进度
+  prepare: 生成求职准备材料
+  full: 运行完整ADLP流程
+
+outputs:
+  - 个人学习画像报告 (JSON/HTML)
+  - 结构化学习路径 (Markdown/JSON)
+  - 项目计划模板 (Markdown)
+  - 求职材料包 (Markdown/HTML)
+  - 进度跟踪看板 (HTML)
+
+dependencies:
+  - Python 3.8+
+  - pandas (数据分析)
+  - matplotlib (可视化)
+  - pyyaml (配置管理)
+  - flask (Web界面，可选)
